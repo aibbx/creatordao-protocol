@@ -1,0 +1,74 @@
+import { motion } from 'framer-motion'
+
+const layers = [
+  {
+    layer: 'Layer 3',
+    name: 'Attention Oracle',
+    desc: 'On-chain reputation scoring & dynamic pricing engine',
+    color: 'text-purple-400',
+    border: 'border-purple-500/20',
+    bg: 'bg-purple-500/5',
+  },
+  {
+    layer: 'Layer 2',
+    name: 'Attention Market',
+    desc: 'Bidding engine, escrow, automatic revenue splits',
+    color: 'text-blue-400',
+    border: 'border-blue-500/20',
+    bg: 'bg-blue-500/5',
+  },
+  {
+    layer: 'Layer 1',
+    name: 'Agent Launchpad',
+    desc: 'ERC-721 creator agents with on-chain identity',
+    color: 'text-cyan-400',
+    border: 'border-cyan-500/20',
+    bg: 'bg-cyan-500/5',
+  },
+  {
+    layer: 'Layer 0',
+    name: 'Multi-Engine Video',
+    desc: 'HeyGen CLI, Seedance 2.0, Veo 3.1, Kling 3.0',
+    color: 'text-emerald-400',
+    border: 'border-emerald-500/20',
+    bg: 'bg-emerald-500/5',
+  },
+]
+
+export default function ProtocolStack() {
+  return (
+    <section id="protocol-stack" className="py-28 px-6 border-t border-border">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Protocol Stack</h2>
+          <p className="text-muted-foreground">Four composable layers powering the attention economy.</p>
+        </motion.div>
+
+        <div className="flex flex-col gap-4">
+          {layers.map((l, i) => (
+            <motion.div
+              key={l.layer}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className={`rounded-xl border ${l.border} ${l.bg} p-6 flex flex-col sm:flex-row sm:items-center gap-4`}
+            >
+              <div className="flex items-center gap-4 sm:w-56 shrink-0">
+                <span className={`font-mono text-xs ${l.color} opacity-70`}>{l.layer}</span>
+                <h3 className={`font-semibold ${l.color}`}>{l.name}</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">{l.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
