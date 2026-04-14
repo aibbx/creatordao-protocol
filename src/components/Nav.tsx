@@ -6,6 +6,7 @@ const links = [
   { label: 'Stack', href: '#protocol-stack' },
   { label: 'Developers', href: '#build-on' },
   { label: 'Token', href: '#token' },
+  { label: 'Deck', href: '/deck' },
 ]
 
 export default function Nav() {
