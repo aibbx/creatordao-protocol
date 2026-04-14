@@ -5,6 +5,7 @@ import ProtocolStack from './components/ProtocolStack'
 import BuildOn from './components/BuildOn'
 import TokenSection from './components/TokenSection'
 import BackedBy from './components/BackedBy'
+import Roadmap from './components/Roadmap'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
       <BuildOn />
       <TokenSection />
       <BackedBy />
+      <Roadmap />
       <Footer />
     </>
   )

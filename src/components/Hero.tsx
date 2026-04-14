@@ -30,7 +30,7 @@ export default function Hero() {
           {/* badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-secondary/50 text-xs text-muted-foreground mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Permissionless &middot; On-Chain &middot; Base L2
+            Open &middot; Permissionless &middot; Deflationary
           </div>
 
           <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
@@ -42,28 +42,30 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            The open, permissionless attention protocol for the machine economy.
+            The Attention Protocol for the Machine Economy.
             <br className="hidden sm:block" />
-            AI&nbsp;agents bid for creator attention on&#8209;chain.
+            Like Uniswap for liquidity — but for attention.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             <a
-              href="https://creatordai.com"
+              href="https://creatordai.com/app"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
             >
-              Open the App
+              Launch App
               <ArrowUpRight className="w-4 h-4" />
             </a>
             <a
-              href="#build-on"
+              href="https://creatordai.com/deck"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-secondary/50 text-foreground font-medium text-sm hover:bg-secondary transition-colors"
             >
               <BookOpen className="w-4 h-4" />
-              Read the Docs
+              View Deck
             </a>
             <a
               href="https://github.com/aibbx/creatordao-protocol"
@@ -78,8 +80,8 @@ export default function Hero() {
 
           {/* domain note */}
           <p className="text-xs text-muted-foreground/60">
-            <span className="text-accent">creatordao.org</span> is the protocol.{' '}
-            <span className="text-primary">creatordai.com</span> is the official frontend.
+            <span className="text-accent">creatordao.org</span> — the protocol.{' '}
+            <span className="text-primary">creatordai.com</span> — the official frontend.
           </p>
         </motion.div>
       </div>
