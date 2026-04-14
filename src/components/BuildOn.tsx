@@ -1,23 +1,25 @@
 import { motion } from 'framer-motion'
 import { Terminal, Code2, Blocks } from 'lucide-react'
 
+const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
+
 const paths = [
   {
     icon: Blocks,
     title: 'Smart Contracts',
-    desc: 'Call the protocol directly from Solidity or any EVM-compatible language.',
+    desc: 'Call the protocol directly from Solidity or any EVM-compatible language. Fully permissionless — no gatekeepers.',
     badge: 'Direct',
   },
   {
     icon: Terminal,
     title: 'CLI + SDK',
-    desc: 'npm install creatordao — TypeScript SDK and command-line tools.',
+    desc: 'npm install creatordao — TypeScript SDK and command-line tools for programmatic access.',
     badge: 'npm',
   },
   {
     icon: Code2,
     title: 'MCP Server',
-    desc: 'Plug into any AI framework with the Model Context Protocol server.',
+    desc: 'Any AI framework can integrate with the Model Context Protocol server. Agent-native by design.',
     badge: 'AI Native',
   },
 ]
@@ -34,32 +36,33 @@ const codeSnippet = `$ creatordao bid \\
 
 export default function BuildOn() {
   return (
-    <section id="build-on" className="py-28 px-6 border-t border-border">
-      <div className="max-w-5xl mx-auto">
+    <section id="build-on" className="relative py-20 sm:py-36 px-5 sm:px-6 border-t border-white/[0.04]">
+      <div className="relative max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Build on the Protocol</h2>
-          <p className="text-muted-foreground">
+          <motion.p variants={fadeUp} className="text-[10px] sm:text-xs font-medium uppercase tracking-[0.2em] text-primary mb-4">Developers</motion.p>
+          <motion.h2 variants={fadeUp} className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">Build on the Protocol</motion.h2>
+          <motion.p variants={fadeUp} className="text-muted-foreground">
             Open. No API keys. No approvals. Three ways to integrate.
-          </p>
+          </motion.p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-3 gap-6 mb-12">
+        <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-12">
           {paths.map((p, i) => (
             <motion.div
               key={p.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="rounded-2xl border border-border bg-card p-7"
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 sm:p-7 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
             >
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
                   <p.icon className="w-5 h-5 text-accent" />
                 </div>
@@ -73,21 +76,21 @@ export default function BuildOn() {
           ))}
         </div>
 
-        {/* code preview */}
+        {/* Terminal */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-2xl border border-border bg-card overflow-hidden"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="rounded-xl border border-white/[0.06] bg-card overflow-hidden"
         >
-          <div className="flex items-center gap-2 px-5 py-3 border-b border-border">
-            <span className="w-3 h-3 rounded-full bg-red-500/40" />
-            <span className="w-3 h-3 rounded-full bg-yellow-500/40" />
-            <span className="w-3 h-3 rounded-full bg-green-500/40" />
-            <span className="ml-3 text-xs text-muted-foreground font-mono">Terminal</span>
+          <div className="flex items-center gap-2 px-5 py-3 border-b border-white/[0.06] bg-white/[0.01]">
+            <span className="w-3 h-3 rounded-full bg-red-500/30" />
+            <span className="w-3 h-3 rounded-full bg-yellow-500/30" />
+            <span className="w-3 h-3 rounded-full bg-green-500/30" />
+            <span className="ml-3 text-[10px] text-muted-foreground font-mono tracking-wider">TERMINAL</span>
           </div>
-          <pre className="p-6 text-sm font-mono text-emerald-400/90 overflow-x-auto leading-relaxed">
+          <pre className="p-5 sm:p-6 text-sm font-mono text-emerald-400/90 overflow-x-auto leading-relaxed">
             {codeSnippet}
           </pre>
         </motion.div>

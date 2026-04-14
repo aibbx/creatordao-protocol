@@ -2,19 +2,35 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: hsl(240 20% 3.5%);
+  --color-background: hsl(240 20% 4%);
   --color-foreground: hsl(0 0% 95%);
-  --color-card: hsl(240 15% 7%);
+  --color-card: hsl(240 15% 8%);
+  --color-card-foreground: hsl(0 0% 95%);
   --color-primary: hsl(245 58% 51%);
   --color-primary-foreground: hsl(0 0% 100%);
-  --color-secondary: hsl(240 12% 10%);
+  --color-secondary: hsl(240 12% 12%);
+  --color-secondary-foreground: hsl(0 0% 85%);
   --color-muted: hsl(240 10% 14%);
-  --color-muted-foreground: hsl(240 5% 50%);
+  --color-muted-foreground: hsl(240 5% 55%);
   --color-accent: hsl(192 91% 43%);
-  --color-border: hsl(240 10% 14%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-border: hsl(240 10% 16%);
+  --color-ring: hsl(245 58% 51%);
 
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius: 0.75rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.06; }
+  50% { opacity: 0.12; }
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; border-color: var(--color-border); }
@@ -25,6 +41,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3 { font-weight: 700; letter-spacing: -0.025em; }

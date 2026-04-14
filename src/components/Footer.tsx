@@ -6,104 +6,76 @@ function GithubIcon({ className }: { className?: string }) {
   )
 }
 
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  )
+}
+
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-16 px-6">
+    <footer className="border-t border-white/[0.04] py-8 sm:py-12 px-5 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="grid sm:grid-cols-3 gap-10 mb-12">
-          {/* brand */}
+        {/* Top row */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-8">
+          {/* Logo & tagline */}
           <div>
-            <div className="font-bold text-lg mb-3">
-              <span className="text-primary">Creator</span>DAO
+            <div className="flex items-center gap-2.5 mb-3">
+              <span className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-xs font-bold">C</span>
+              <span className="font-bold text-lg tracking-tight">
+                <span className="text-foreground">Creator</span>
+                <span className="text-primary">DAO</span>
+              </span>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              The open attention protocol for the machine economy.
-              Built on Base&nbsp;L2.
+            <p className="text-sm text-muted-foreground max-w-xs">
+              The Attention Protocol for the Machine Economy.
+              <br />Open. Permissionless. Deflationary.
             </p>
           </div>
 
-          {/* protocol */}
-          <div>
-            <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-3">
-              Protocol
-            </div>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#what-is" className="text-muted-foreground hover:text-foreground transition-colors">
-                  What Is CreatorDAO
-                </a>
-              </li>
-              <li>
-                <a href="#protocol-stack" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Protocol Stack
-                </a>
-              </li>
-              <li>
-                <a href="#build-on" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Developers
-                </a>
-              </li>
-              <li>
-                <a href="#token" className="text-muted-foreground hover:text-foreground transition-colors">
-                  $CREATOR Token
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* links */}
-          <div>
-            <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-3">
-              Links
-            </div>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href="https://creatordai.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent hover:text-accent/80 transition-colors"
-                >
-                  creatordai.com — Official Frontend
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/aibbx/creatordao-protocol"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5"
-                >
-                  <GithubIcon className="w-3.5 h-3.5" />
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://x.com/creatordao"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Twitter / X
-                </a>
-              </li>
-            </ul>
+          {/* Nav links */}
+          <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+            <a href="#what-is" className="text-muted-foreground hover:text-foreground transition-colors">Protocol</a>
+            <a href="#protocol-stack" className="text-muted-foreground hover:text-foreground transition-colors">Stack</a>
+            <a href="#build-on" className="text-muted-foreground hover:text-foreground transition-colors">Developers</a>
+            <a href="#token" className="text-muted-foreground hover:text-foreground transition-colors">Token</a>
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground">
-            &copy; 2026 CreatorDAO Protocol — Open source, permissionless
-          </p>
-          <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <span>
-              Protocol: <span className="text-accent">creatordao.org</span>
+        {/* Divider */}
+        <div className="border-t border-white/[0.04] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            {/* Built on Base badge */}
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/[0.05] text-[10px] text-blue-400 font-mono">
+              Built on Base
             </span>
-            <span className="text-border">|</span>
-            <span>
-              App: <span className="text-primary">creatordai.com</span>
-            </span>
+
+            <div className="flex items-center gap-3">
+              <a
+                href="https://github.com/aibbx/creatordao-protocol"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <GithubIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="https://x.com/creatordao"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <XIcon className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4 text-[10px] sm:text-xs text-muted-foreground font-mono">
+            <span>Protocol: <span className="text-accent">creatordao.org</span></span>
+            <span className="text-white/10">|</span>
+            <span>App: <span className="text-primary">creatordai.com</span></span>
           </div>
         </div>
       </div>
